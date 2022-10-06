@@ -26,7 +26,7 @@ def download_file():
 
     # move to selected directory
     shutil.move(mp4_video, user_path)
-    screen.title('Download complete!😎')
+    screen.title('Download complete!👍')
 
     # Tk application object created by instantiating Tk
 screen = Tk()
