@@ -1,6 +1,14 @@
 from tkinter import *
 from tkinter import filedialog
 
+
+# functions
+# allows user to select a path from the explorer
+def select_path():
+    path = filedialog.askdirectory()
+    path_label.config(text=path)
+
+
 # Tk application object created by instantiating Tk
 screen = Tk()
 title = screen.title('YouTube Downloader')
@@ -23,7 +31,7 @@ link_label = Label(screen, text="Enter Download Link:", font="Lato, 15")
 
 # select path for saving file
 path_label = Label(screen, text="Select path for download")
-select_btn = Button(screen, text='Select')
+select_btn = Button(screen, text='Select', command=select_path)
 
 # add to window
 canvas.create_window(250, 280, window=path_label)
