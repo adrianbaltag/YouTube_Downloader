@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from turtle import color
 from moviepy import *
 from moviepy.editor import VideoFileClip
 from pytube import YouTube
@@ -30,6 +31,7 @@ def download_file():
     shutil.move(mp4_video, user_path)
     screen.title('Download complete!👍')
 
+
     # Tk application object created by instantiating Tk
 screen = Tk()
 title = screen.title('YouTube Downloader')
@@ -48,11 +50,11 @@ canvas.create_image(250, 80, image=logo_img)
 
 # link field(widgets)
 link_field = Entry(screen, width=50)
-link_label = Label(screen, text="Enter Download Link:", font="Lato, 15")
+link_label = Label(screen, text="Enter Download Link:", font="Lato, 15", bg="#1a1a1a", fg="#fff")
 
 # select path for saving file
-path_label = Label(screen, text="Select path for download")
-select_btn = Button(screen, text='Select', command=select_path)
+path_label = Label(screen, text="Select path for download", padx=20)
+select_btn = Button(screen, text='Select', command=select_path, padx=40, bg='#c92a2a', fg='#fff5f5')
 
 # add to window
 canvas.create_window(250, 280, window=path_label)
@@ -63,7 +65,7 @@ canvas.create_window(250, 170, window=link_label)
 canvas.create_window(250, 200, window=link_field)
 
 # download btns
-download_btn = Button(screen, text="Download file", command=download_file)  # , command=download_file --> for downloading the file
+download_btn = Button(screen, text="Download file", padx=20, bg='#c92a2a', fg='#fff5f5', command=download_file)  # , command=download_file --> for downloading the file
 # add to canvas
 canvas.create_window(250, 390, window=download_btn)
 
