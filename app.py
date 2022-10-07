@@ -8,6 +8,8 @@ import shutil
 
 # functions
 # allows user to select a path from the explorer
+
+
 def select_path():
     path = filedialog.askdirectory()
     path_label.config(text=path)
@@ -32,7 +34,7 @@ def download_file():
 screen = Tk()
 title = screen.title('YouTube Downloader')
 # set up GUI
-canvas = Canvas(screen, width=500, height=500)
+canvas = Canvas(screen, width=500, height=500, bg="#1a1a1a")
 canvas.pack()
 
 # img-logo
