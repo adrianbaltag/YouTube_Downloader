@@ -35,6 +35,8 @@ def download_file():
     # Tk application object created by instantiating Tk
 screen = Tk()
 title = screen.title('YouTube Downloader')
+# ico file(favicon)
+screen.iconbitmap('yt_icon.ico')
 # set up GUI
 canvas = Canvas(screen, width=500, height=500, bg="#1a1a1a")
 canvas.pack()
