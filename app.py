@@ -20,6 +20,8 @@ def select_path():
 def download_file():
     # get user path
     get_link = link_field.get()
+    # display user choice in listbox
+    list.insert(0, get_link)
     # get selected path
     user_path = path_label.cget('text')
     screen.title('Downloading...👀')
@@ -66,17 +68,18 @@ canvas.create_window(250, 330, window=select_btn)
 canvas.create_window(250, 170, window=link_label)
 canvas.create_window(250, 200, window=link_field)
 
+
 # download btns
-download_btn = Button(screen, text="Download file", padx=20, bg='#c92a2a', fg='#fff5f5', command=download_file)  # , command=download_file --> for downloading the file
+download_btn = Button(screen, text="Download file", padx=19, bg='#c92a2a', fg='#fff5f5', command=download_file)  # , command=download_file --> for downloading the file
 # add to canvas
-canvas.create_window(250, 370, window=download_btn)
+canvas.create_window(250, 360, window=download_btn)
 
 # frame
 frame = Frame(canvas, width=450, height=200, border=0)
 # add frame to canvas
 canvas.create_window(250, 520, window=frame)
 
-list = Listbox(frame, width=80, height=15, background='#c92a2a')
+list = Listbox(frame, width=80, height=15, background='#c92a2a', fg='white')
 list.pack()
 
 # btn interact with listbox
@@ -87,6 +90,7 @@ canvas.create_window(190, 660, window=btn_delete)
 btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18)
 # add btn to canvas
 canvas.create_window(300, 660, window=btn_delete_all)
+
 
 # run GUI
 screen.mainloop()
