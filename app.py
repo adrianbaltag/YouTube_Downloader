@@ -72,14 +72,21 @@ download_btn = Button(screen, text="Download file", padx=20, bg='#c92a2a', fg='#
 canvas.create_window(250, 370, window=download_btn)
 
 # frame
-frame = Frame(canvas, width=450, height=200)
+frame = Frame(canvas, width=450, height=200, border=0)
 # add frame to canvas
 canvas.create_window(250, 520, window=frame)
 
-list = Listbox(frame, width=80, height=15, background='red')
+list = Listbox(frame, width=80, height=15, background='#c92a2a')
 list.pack()
 
-#btn interact with listbox
+# btn interact with listbox
+btn_delete = Button(canvas, text="Delete", bg='white', fg='red', padx=20)
+# add btn to canvas
+canvas.create_window(190, 660, window=btn_delete)
+
+btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18)
+# add btn to canvas
+canvas.create_window(300, 660, window=btn_delete_all)
 
 # run GUI
 screen.mainloop()
