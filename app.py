@@ -1,3 +1,4 @@
+from msilib.schema import ListBox
 from tkinter import *
 from tkinter import filedialog
 from turtle import color
@@ -71,9 +72,14 @@ download_btn = Button(screen, text="Download file", padx=20, bg='#c92a2a', fg='#
 canvas.create_window(250, 370, window=download_btn)
 
 # frame
-frame = Frame(canvas, width=450, height=150)
+frame = Frame(canvas, width=450, height=200)
 # add frame to canvas
-canvas.create_window(250, 500, window=frame)
+canvas.create_window(250, 520, window=frame)
+
+list = Listbox(frame, width=80, height=15, background='red')
+list.pack()
+
+#btn interact with listbox
 
 # run GUI
 screen.mainloop()
