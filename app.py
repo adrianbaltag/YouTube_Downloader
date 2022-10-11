@@ -1,4 +1,5 @@
 from msilib.schema import ListBox
+from struct import pack
 from tkinter import *
 from tkinter import filedialog
 from turtle import color
@@ -9,19 +10,28 @@ from pytube import YouTube
 import shutil
 
 # functions
+
+
+# delete btn input
+def delete_link():
+    list.delete(0, "end")
+    link_field.delete(0, 'end')
+
+
 # allows user to select a path from the explorer
-
-
 def select_path():
     path = filedialog.askdirectory()
     path_label.config(text=path)
 
 
 def download_file():
+    global value_link
+    global get_link
     # get user path
     get_link = link_field.get()
     # display user choice in listbox
-    list.insert(0, get_link)
+    value_link = list.insert(0, get_link)
+
     # get selected path
     user_path = path_label.cget('text')
     screen.title('Downloading...👀')
@@ -83,14 +93,18 @@ list = Listbox(frame, width=80, height=15, background='#c92a2a', fg='white')
 list.pack()
 
 # btn interact with listbox
-btn_delete = Button(canvas, text="Delete", bg='white', fg='red', padx=20)
+btn_delete = Button(canvas, text="Delete", bg='white', fg='red', padx=20, command=delete_link)
 # add btn to canvas
-canvas.create_window(190, 660, window=btn_delete)
+canvas.create_window(100, 660, window=btn_delete)
 
 btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18)
 # add btn to canvas
-canvas.create_window(300, 660, window=btn_delete_all)
+canvas.create_window(200, 660, window=btn_delete_all)
 
 
+# btn update
+btn_update = Button(canvas, text="Rename",  bg='white', fg='red', padx=18)  #
+# add btn to canvas
+canvas.create_window(300, 660, window=btn_update)
 # run GUI
 screen.mainloop()
