@@ -31,14 +31,13 @@ def download_file():
     shutil.move(mp4_video, user_path)
     screen.title('Download complete!👍')
 
-
     # Tk application object created by instantiating Tk
 screen = Tk()
 title = screen.title('YouTube Downloader')
 # ico file(favicon)
 screen.iconbitmap('yt_icon.ico')
 # set up GUI
-canvas = Canvas(screen, width=500, height=500, bg="#1a1a1a")
+canvas = Canvas(screen, width=500, height=700, bg="#1a1a1a")
 canvas.pack()
 
 # img-logo
@@ -69,8 +68,12 @@ canvas.create_window(250, 200, window=link_field)
 # download btns
 download_btn = Button(screen, text="Download file", padx=20, bg='#c92a2a', fg='#fff5f5', command=download_file)  # , command=download_file --> for downloading the file
 # add to canvas
-canvas.create_window(250, 390, window=download_btn)
+canvas.create_window(250, 370, window=download_btn)
 
+# frame
+frame = Frame(canvas, width=450, height=150)
+# add frame to canvas
+canvas.create_window(250, 500, window=frame)
 
 # run GUI
 screen.mainloop()
