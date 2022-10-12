@@ -2,6 +2,7 @@ from msilib.schema import ListBox
 from struct import pack
 from tkinter import *
 from tkinter import filedialog
+import tkinter
 from turtle import color
 from moviepy import *
 from moviepy.editor import VideoFileClip
@@ -10,26 +11,26 @@ from pytube import YouTube
 import shutil
 import os
 import time
+from tkinter import messagebox
 
-
-
-
-            # functions
+# functions
 # clear btn input
+
+
 def delete_link():
     list.delete(0, "end")
     link_field.delete(0, 'end')
 
 
 # delete file from pc folder
-def del_video():
+def del_videos():
     target = "C:\\Users\\adria\\OneDrive\\Desktop\\video_download\\"
     for video in os.listdir(target):
         if video.endswith('.mp4'):
-            print('deleting file:', video)
+            messagebox.showinfo('deleting file:', video)
             os.unlink(target + video)
             time.sleep(2)
-            print('file deleted')
+            messagebox.showinfo('file deleted')
 
 
 # allows user to select a path from the explorer
@@ -116,7 +117,7 @@ btn_delete = Button(canvas, text="Clear", bg='white', fg='red', padx=20, command
 # add btn to canvas
 canvas.create_window(100, 660, window=btn_delete)
 
-btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18, command=del_video)
+btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18, command=del_videos)
 # add btn to canvas
 canvas.create_window(200, 660, window=btn_delete_all)
 
