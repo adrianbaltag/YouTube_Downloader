@@ -1,3 +1,4 @@
+from ast import And
 from msilib.schema import ListBox
 from struct import pack
 from tkinter import *
@@ -22,7 +23,7 @@ def delete_link():
     link_field.delete(0, 'end')
 
 
-# delete file from pc folder
+# delete all_files from pc folder
 def del_videos():
     target = "C:\\Users\\adria\\OneDrive\\Desktop\\video_download\\"
     for video in os.listdir(target):
@@ -32,9 +33,20 @@ def del_videos():
             time.sleep(2)
             messagebox.showinfo('file deleted')
 
+# DELETE SINGLE VIDEO
 
-# allows user to select a path from the explorer
-print(os.getcwd())
+
+def del_video(event):
+    target = "C:\\Users\\adria\\OneDrive\\Desktop\\video_download\\"
+    for video in os.listdir(target):
+        # if video.endswith('.mp4') != video.endswith('.mp4'):
+        #     messagebox.showinfo('deleting file:', video)
+        os.unlink(target + video)
+        # time.sleep(2)
+        # messagebox.showinfo('file deleted')
+        # print(del_video)
+
+    # allows user to select a path from the explorer
 
 
 def select_path():
@@ -63,6 +75,7 @@ def download_file():
     # move to selected directory
     shutil.move(mp4_video, user_path)
     screen.title('Download complete!👍')
+
 
     # Tk application object created by instantiating Tk
 screen = Tk()
@@ -109,22 +122,29 @@ frame = Frame(canvas, width=450, height=50)
 # add frame to canvas
 canvas.create_window(250, 520, window=frame)
 
-list = Listbox(frame, width=80, height=5, background='#c92a2a', fg='white')
+# scrollbar
+my_scrollbar = Scrollbar(frame, orient=VERTICAL)
+# listbox
+list = Listbox(frame, width=80, height=5, background='#c92a2a', fg='white', yscrollcommand=my_scrollbar.set, selectmode=MULTIPLE)
+my_scrollbar.config(command=list.yview)
+my_scrollbar.pack(side=RIGHT, fill=Y)
 list.pack()
 
 # btn interact with listbox
-btn_delete = Button(canvas, text="Clear", bg='white', fg='red', padx=20, command=delete_link)
+btn_clear = Button(canvas, text="Clear", bg='white', fg='red', padx=20, command=delete_link)
 # add btn to canvas
-canvas.create_window(100, 660, window=btn_delete)
+canvas.create_window(150, 600, window=btn_clear)
 
 btn_delete_all = Button(canvas, text="Delete All", bg='white', fg='red', padx=18, command=del_videos)
 # add btn to canvas
-canvas.create_window(200, 660, window=btn_delete_all)
+canvas.create_window(250, 600, window=btn_delete_all)
 
 
-# btn update
-btn_update = Button(canvas, text="Rename",  bg='white', fg='red', padx=18)  #
+# btn DELETE
+btn_delete = Button(canvas, text="Delete",  bg='white', fg='red', padx=18)
+# event listener --<Button-1> mouse_left_click
+btn_delete.bind("<Button-1>", del_video)
 # add btn to canvas
-canvas.create_window(300, 660, window=btn_update)
+canvas.create_window(350, 600, window=btn_delete)
 # run GUI
 screen.mainloop()
