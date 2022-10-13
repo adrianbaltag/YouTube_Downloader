@@ -28,10 +28,10 @@ def del_videos():
     target = "C:\\Users\\adria\\OneDrive\\Desktop\\video_download\\"
     for video in os.listdir(target):
         if video.endswith('.mp4'):
-            messagebox.showinfo('deleting file:', video)
+            # messagebox.showinfo('deleting file:', video)
             os.unlink(target + video)
-            time.sleep(2)
-            messagebox.showinfo('file deleted')
+            # time.sleep(2)
+            # messagebox.showinfo('file deleted')
 
 # DELETE SINGLE VIDEO
 
@@ -40,11 +40,16 @@ def del_video(event):
     target = "C:\\Users\\adria\\OneDrive\\Desktop\\video_download\\"
     for video in os.listdir(target):
         # if video.endswith('.mp4') != video.endswith('.mp4'):
-        #     messagebox.showinfo('deleting file:', video)
+        messagebox.showinfo('deleting file:', video)
         os.unlink(target + video)
-        # time.sleep(2)
-        # messagebox.showinfo('file deleted')
+        time.sleep(2)
+        messagebox.showinfo('file deleted')
         # print(del_video)
+
+
+# delete sigle video// what is highlited on click will become ANCHOR
+def del_from_list():
+    list.delete(ANCHOR)
 
     # allows user to select a path from the explorer
 
@@ -75,7 +80,6 @@ def download_file():
     # move to selected directory
     shutil.move(mp4_video, user_path)
     screen.title('Download complete!👍')
-
 
     # Tk application object created by instantiating Tk
 screen = Tk()
@@ -141,7 +145,7 @@ canvas.create_window(250, 600, window=btn_delete_all)
 
 
 # btn DELETE
-btn_delete = Button(canvas, text="Delete",  bg='white', fg='red', padx=18)
+btn_delete = Button(canvas, text="Delete",  bg='white', fg='red', padx=18, command=del_from_list)
 # event listener --<Button-1> mouse_left_click
 btn_delete.bind("<Button-1>", del_video)
 # add btn to canvas
