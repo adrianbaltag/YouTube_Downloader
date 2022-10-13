@@ -4,6 +4,7 @@ from struct import pack
 from tkinter import *
 from tkinter import filedialog
 import tkinter
+from tkinter import font
 from turtle import color
 from moviepy import *
 from moviepy.editor import VideoFileClip
@@ -81,9 +82,11 @@ def download_file():
     shutil.move(mp4_video, user_path)
     screen.title('Download complete!👍')
 
+
     # Tk application object created by instantiating Tk
 screen = Tk()
 title = screen.title('YouTube Downloader')
+
 # ico file(favicon)
 screen.iconbitmap('yt_icon.ico')
 # set up GUI
@@ -150,5 +153,10 @@ btn_delete = Button(canvas, text="Delete",  bg='white', fg='red', padx=18, comma
 btn_delete.bind("<Button-1>", del_video)
 # add btn to canvas
 canvas.create_window(350, 600, window=btn_delete)
+
+# btn quit app
+btn_quit = Button(screen, text="Close App", font=('Poppins, 16'), command=screen.quit, bg="#791919", fg="#faeaea")
+canvas.create_window(250, 670, window=btn_quit)
+# btn_quit.pack(pady=1)
 # run GUI
 screen.mainloop()
