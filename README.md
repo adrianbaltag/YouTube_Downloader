@@ -42,6 +42,8 @@ pip install pytube
 
 Create a folder on your PC
 
+Make sure to change the "Path" inside the "main.py" to your folder path(by default will not work)
+
 Run the app
 
 Copy the link from a fav video on YouTube
