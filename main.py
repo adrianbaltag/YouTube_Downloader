@@ -10,9 +10,12 @@ from pytube import YouTube
 # functions
 
 
+# delete link from list and clear entry field
 def delete_link():
     list.delete(0, "end")
     link_field.delete(0, 'end')
+
+#  delete all videos in target folder
 
 
 def del_videos():
@@ -20,6 +23,8 @@ def del_videos():
     for video in os.listdir(target):
         if video.endswith('.mp4'):
             os.unlink(os.path.join(target, video))
+
+# delete single video from traget folder
 
 
 def del_video(event):
@@ -30,16 +35,22 @@ def del_video(event):
         time.sleep(2)
         messagebox.showinfo('file deleted')
 
+#  delete selected video from list
+
 
 def del_from_list():
     selected_index = list.curselection()
     if selected_index:
         list.delete(selected_index)
 
+#  select path for downloadoading videos from youtube
+
 
 def select_path():
     path = filedialog.askdirectory()
     path_label.config(text=path)
+
+# download video from youtube
 
 
 def download_file():
