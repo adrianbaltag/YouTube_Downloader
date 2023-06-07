@@ -5,11 +5,36 @@ It is very easy to use and will help you save your favorite videos in a chosen f
 
 
 
-## Motivation
+## Situation
 
-I created this app, as my first Python script, to help myself to learn Python, save my favorite videos from YouTube in different folders on my PC(related to different topics interested in), become a better developer, and have all my favorite resources at hand.
-    
+I created this app, as my first Python script, to help myself to learn Python, as part of my Verizon Thrive Apprenticeship, where one of requirements was to learn a second language. 
 
+
+## Task
+The project folder structure is as followed:
+- gitignore
+- main.py
+- 2 images
+
+This project fulfill job function 1, 2 and 6:
+
+- JF 1.1	Can explain all stages of the software development life cycle (what each stage contains, including the inputs and outputs)				
+- JF 1.6	Can follow software designs and functional/technical specifications		
+- JF 1.7	Can follow company, team or client approaches to continuous integration, version and source control				
+- JF 2.2	Can identify relevant and up-to-date software designs and how to read and implement functional/technical specifications				
+- JF 2.3	Can develop effective user interfaces
+- JF 6.1	Knows how best to communicate using different communication methods and how to adapt appropriately to different audiences				
+- JF 6.6	Shows initiative for solving problems within their own remit, being resourceful when faced with a problem to solve				
+- JF 6.7	Communicates effectively in a variety of situations to both a technical and nontechnical audience.										
+
+
+
+## Action
+Took a self study Python online course.Watched several YouTube tutorials, in order to gain a better understanding of some of Python's libraries, revied Python's docs.
+Learned how to use and adapt Tkinter for having a GUI for the app.
+
+## Result
+Video of the app presentation coming soon😎
 ## Authors
 
 - [@adrianbaltag](https://github.com/adrianbaltag)  
