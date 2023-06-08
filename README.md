@@ -34,7 +34,8 @@ Took a self study Python online course.Watched several YouTube tutorials, in ord
 Learned how to use and adapt Tkinter for having a GUI for the app.
 
 ## Result
-Video of the app presentation coming soon😎
+
+- [Project presentation](https://drive.google.com/file/d/1F7K9TpATnUXZuWUSvLHcuPrh2p3q48lF/view?ts=6480e49f)
 ## Authors
 
 - [@adrianbaltag](https://github.com/adrianbaltag)  
